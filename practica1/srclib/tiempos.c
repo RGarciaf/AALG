@@ -18,12 +18,13 @@
 /* Vuestra documentacion (formato igual            */
 /* que en el primer apartado):                     */
 /***************************************************/
-short tiempo_medio_ordenacion(pfunc_ordena metodo, 
+short tiempo_medio_ordenacion(pfunc_ordena metodo,
                               int n_perms,
-                              int N, 
+                              int N,
                               PTIEMPO ptiempo)
 {
 /* vuestro codigo */
+return 0;
 }
 
 /***************************************************/
@@ -31,11 +32,12 @@ short tiempo_medio_ordenacion(pfunc_ordena metodo,
 /*                                                 */
 /* Vuestra documentacion                           */
 /***************************************************/
-short genera_tiempos_ordenacion(pfunc_ordena metodo, char* fichero, 
-                                int num_min, int num_max, 
+short genera_tiempos_ordenacion(pfunc_ordena metodo, char* fichero,
+                                int num_min, int num_max,
                                 int incr, int n_perms)
 {
   /* vuestro codigo */
+	return 0;
 }
 
 /***************************************************/
@@ -47,6 +49,5 @@ short genera_tiempos_ordenacion(pfunc_ordena metodo, char* fichero,
 short guarda_tabla_tiempos(char* fichero, PTIEMPO tiempo, int n_tiempos)
 {
   /* vuestro codigo */
+	return 0;
 }
-
-
