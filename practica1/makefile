@@ -1,6 +1,6 @@
 # Makefile de redes2
 CC = gcc
-CFLAGS = -Wall -ansi -g -std=gnu99
+CFLAGS = -Wall -ansi -pedantic -g -std=gnu99
 COMPILE = -c
 LIB = -Llib -lsource
 HEADERS = -I includes
