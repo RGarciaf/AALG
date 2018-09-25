@@ -49,6 +49,11 @@ int main(int argc, char** argv)
     exit(-1);
   }
 
+	for(j = 0; j < tamano; j++) {
+    printf("%d \t", perm[j]);
+  }
+	printf("\n" );
+
   ret = SelectSort(perm, 0, tamano-1);
 
   if (ret == ERR) {
@@ -66,4 +71,3 @@ int main(int argc, char** argv)
 
   return 0;
 }
-

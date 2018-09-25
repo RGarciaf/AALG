@@ -26,10 +26,10 @@ int SelectSort(int* tabla, int ip, int iu)
 
 	for (; ip < iu; ip++ ){
 
-		for ( index = ip; index < iu; index++ ){
+		for (min = ip, index = ip; index <= iu; index++ ){
 
 			obs++;
-			if ( tabla[index] < tabla[ip] ){
+			if ( tabla[index] < tabla[min] ){
 				min = index;
 			}
 		}
@@ -50,10 +50,10 @@ int SelectSortInv(int* tabla, int ip, int iu)
 
 	for (; ip < iu; ip++ ){
 
-		for ( index = ip; index < iu; index++ ){
+		for (min = ip, index = ip ; index <= iu; index++ ){
 
 			obs++;
-			if ( tabla[index] > tabla[ip] ){
+			if ( tabla[index] > tabla[min] ){
 				min = index;
 			}
 		}
@@ -61,6 +61,7 @@ int SelectSortInv(int* tabla, int ip, int iu)
 		if ( min != ip ){
 			swap ( &tabla[min], &tabla[ip] );
 		}
+
 	}
 
 	return obs;
