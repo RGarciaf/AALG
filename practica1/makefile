@@ -82,9 +82,10 @@ ejercicio4_execute:
 
 ejercicio5_execute:
 		@echo Ejecutando $@
-		@./ejercicio5 -num_min 100 -num_max 300 -incr 10 -numP 1000 -fichSalida ejercicio5.log
-		@head SelectSort_ejercicio5.log
-		@head SelectSortInv_ejercicio5.log
+		@./ejercicio5 -num_min 100 -num_max 300 -incr 10 -numP 1000 -fichSalida ejercicio5.dat
+		@head SelectSort_ejercicio5.dat
+		@head SelectSortInv_ejercicio5.dat
+		@./gnuplot.sh
 		@echo "\n"
 
 

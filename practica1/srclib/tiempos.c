@@ -41,6 +41,7 @@ short tiempo_medio_ordenacion(pfunc_ordena metodo,
 	    ob = metodo(permutaciones[i],0, N-1);
 	    mob += ob;
 
+
 	    if(i == 0){
 
 	      ptiempo->min_ob = ob;

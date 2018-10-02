@@ -1,4 +1,6 @@
 gnuplot << END_GNUPLOT
+set ylabel "Nº Operaciones Basicas"
+set xlabel "Tamaño"
 set key right bottom
 set grid
 set term png

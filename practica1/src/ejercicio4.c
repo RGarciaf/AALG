@@ -66,7 +66,7 @@ printf("Pareja: 9\n");
   for(j = 0; j < tamano; j++) {
     printf("%d \t", perm[j]);
   }
-  printf("\n");
+  printf("\nObs: %d\n", ret);
 
   free(perm);
 

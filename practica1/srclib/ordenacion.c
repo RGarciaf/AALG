@@ -9,7 +9,6 @@
  *
  */
 
-
 #include "ordenacion.h"
 
 void swap ( int * A, int * B );
@@ -23,15 +22,16 @@ int SelectSort(int* tabla, int ip, int iu)
   int index = ip;
 	int min = ip;
 	int obs = 0;
+  int j;
 
 	for (; ip < iu; ip++ ){
-
 		for (min = ip, index = ip; index <= iu; index++ ){
 
 			obs++;
 			if ( tabla[index] < tabla[min] ){
 				min = index;
 			}
+
 		}
 
 		if ( min != ip ){
