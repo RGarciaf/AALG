@@ -3,7 +3,7 @@
  * Descripcion: Funciones de cabecera para generaciónde permutaciones
  *
  * Fichero: permutaciones.h
- * Autor: Carlos Aguirre 
+ * Autor: Carlos Aguirre
  * Version: 1.0
  * Fecha: 16-09-2017
  *
@@ -22,5 +22,6 @@
 int aleat_num(int inf, int sup);
 int* genera_perm(int N);
 int** genera_permutaciones(int n_perms, int N);
+int libera_permutaciones(int** perm, int n_perms);
 
 #endif

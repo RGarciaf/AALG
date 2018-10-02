@@ -128,3 +128,31 @@ int** genera_permutaciones(int n_perms, int tamanio)
 
     return array;
 }
+
+/***************************************************/
+/* Libera_permutaciones                            */
+/*                                                 */
+/* Libera el array doble insertado                 */
+/*                                                 */
+/* Entrada:                                        */
+/* perm:  array doble a liberar                    */
+/* n_perms: tamaño del array                       */
+/*                                                 */
+/* Salida:                                         */
+/* OK/ERR                                          */
+/***************************************************/
+
+int libera_permutaciones(int** perm, int n_perms){
+  int i;
+
+  if(!perm){
+    return ERR;
+  }
+
+  for(i=0; i<n_perms; i++){
+    free(perm[i]);
+  }
+  free(perm);
+
+  return OK;
+}

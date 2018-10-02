@@ -45,8 +45,10 @@ int main(int argc, char** argv)
   }
 
   printf("Practica numero 1, apartado 5\n");
-  printf("Realizada por: Vuestros nombres\n");
-  printf("Grupo: Vuestro grupo\n");
+  printf("Realizada por: Roman Garcia\n");
+  printf("Grupo: 1271\n");
+printf("Pareja: 9\n");
+
 
   /* comprueba la linea de comandos */
   for(i = 1; i < argc ; i++) {
@@ -75,4 +77,3 @@ int main(int argc, char** argv)
 
   return 0;
 }
-
