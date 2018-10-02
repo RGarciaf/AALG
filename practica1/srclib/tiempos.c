@@ -72,7 +72,7 @@ short tiempo_medio_ordenacion(pfunc_ordena metodo,
 		ptiempo->tiempo  = (secs*1000000000.0)/(double)n_perms;
 
 	  ptiempo->medio_ob = (double)mob/(double)n_perms;
-		printf("%ld / %ld = %lf\n",mob, n_perms, (double)mob/(double)n_perms );
+		printf("%d / %d = %lf\n",mob, n_perms, (double)mob/(double)n_perms );
 
 	  ptiempo->n_elems = n_perms;
 	  ptiempo->N = N;
