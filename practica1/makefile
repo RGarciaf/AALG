@@ -55,3 +55,65 @@ tiempos.o : $(SRCLIB)tiempos.c
 	@echo "# Depende de $^"
 	@echo "# Ha cambiado $<"
 	$(CC) $(CFLAGS) $(COMPILE) $^ $(HEADERS)
+
+
+
+execute: ejercicio1_execute ejercicio2_execute ejercicio3_execute ejercicio4_execute ejercicio5_execute
+
+ejercicio1_execute:
+		@echo Ejecutando $@
+		@./ejercicio1 -limInf 1 -limSup 100 -numN 10
+		@echo "\n"
+
+ejercicio2_execute:
+		@echo Ejecutando $@
+		@./ejercicio2 -tamanio 10 -numP 10
+		@echo "\n"
+
+ejercicio3_execute:
+		@echo Ejecutando $@
+		@./ejercicio3 -tamanio 10 -numP 10
+		@echo "\n"
+
+ejercicio4_execute:
+		@echo Ejecutando $@
+		@./ejercicio4 -tamanio 10
+		@echo "\n"
+
+ejercicio5_execute:
+		@echo Ejecutando $@
+		@./ejercicio5 -num_min 100 -num_max 300 -incr 10 -numP 1000 -fichSalida ejercicio5.log
+		@head SelectSort_ejercicio5.log
+		@head SelectSortInv_ejercicio5.log
+		@echo "\n"
+
+
+
+test: ejercicio1_test ejercicio2_test ejercicio3_test ejercicio4_test ejercicio5_test
+
+ejercicio1_test:
+		@echo Ejecutando $@
+		@./ejercicio1 -limInf 1 -limSup 5 -numN 10
+		@echo "\n"
+
+ejercicio2_test:
+		@echo Ejecutando $@
+		@./ejercicio2 -tamanio 1 -numP 5
+		@echo "\n"
+
+ejercicio3_test:
+		@echo Ejecutando $@
+		@./ejercicio3 -tamanio 1 -numP 5
+		@echo "\n"
+
+ejercicio4_test:
+		@echo Ejecutando $@
+		@./ejercicio4 -tamanio 1
+		@echo "\n"
+
+ejercicio5_test:
+		@echo Ejecutando $@
+		@./ejercicio5 -num_min 1 -num_max 5 -incr 1 -numP 5 -fichSalida ejercicio5.log
+		@head SelectSort_ejercicio5.log
+		@head SelectSortInv_ejercicio5.log
+		@echo "\n"
