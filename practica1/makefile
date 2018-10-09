@@ -62,26 +62,31 @@ execute: ejercicio1_execute ejercicio2_execute ejercicio3_execute ejercicio4_exe
 
 ejercicio1_execute:
 		@echo Ejecutando $@
+		@echo "./ejercicio1 -limInf 1 -limSup 100 -numN 10"
 		@./ejercicio1 -limInf 1 -limSup 100 -numN 10
 		@echo "\n"
 
 ejercicio2_execute:
 		@echo Ejecutando $@
+		@echo "./ejercicio2 -tamanio 10 -numP 10"
 		@./ejercicio2 -tamanio 10 -numP 10
 		@echo "\n"
 
 ejercicio3_execute:
 		@echo Ejecutando $@
+		@echo "./ejercicio3 -tamanio 10 -numP 10"
 		@./ejercicio3 -tamanio 10 -numP 10
 		@echo "\n"
 
 ejercicio4_execute:
 		@echo Ejecutando $@
+		@echo "./ejercicio4 -tamanio 10"
 		@./ejercicio4 -tamanio 10
 		@echo "\n"
 
 ejercicio5_execute:
 		@echo Ejecutando $@
+		@echo "./ejercicio5 -num_min 100 -num_max 300 -incr 10 -numP 1000 -fichSalida ejercicio5.dat"
 		@./ejercicio5 -num_min 100 -num_max 300 -incr 10 -numP 1000 -fichSalida ejercicio5.dat
 		@head SelectSort_ejercicio5.dat
 		@head SelectSortInv_ejercicio5.dat
