@@ -301,7 +301,41 @@ int quicksort(int* tabla, int ip, int iu){
 }
 
 /***************************************************/
-/* Funcion: InsertSort_stat    Fecha:              */
+/* Funcion: QuickSort_src    Fecha:                */
+/*                                                 */
+/* Algortimo de ordenacion de tablas sin           */
+/* recursion de cola                               */
+/*                                                 */
+/* Entrada:                                        */
+/* tabla:  tabla a ordenar                         */
+/* ip: posicion desde la que se quiere ordenar     */
+/* iu: posicion hasta la que se quiere ordenar     */
+/*                                                 */
+/* Salida:                                         */
+/* ob: numero de operaciones basicas realizadas    */
+/***************************************************/
+int quicksort_src(int* tabla, int ip, int iu){
+  int m;
+  int ob = 0;
+
+  if (ip>iu || !tabla){
+    return ERR;
+  }
+
+  else if (ip==iu){
+    return OK;
+  }
+
+  else{
+    while (ip < iu){
+      ob += partir_avg(tabla, ip, iu, &m);
+    }
+    return ob;
+  }
+}
+
+/***************************************************/
+/* Funcion: QuickSort_stat    Fecha:              */
 /*                                                 */
 /* Algortimo de ordenacion de tablas               */
 /*                                                 */
@@ -342,7 +376,7 @@ int quicksort_stat(int* tabla, int ip, int iu){
 }
 
 /***************************************************/
-/* Funcion: InsertSort_avg    Fecha:               */
+/* Funcion: QuickSort_avg    Fecha:               */
 /*                                                 */
 /* Algortimo de ordenacion de tablas               */
 /*                                                 */
