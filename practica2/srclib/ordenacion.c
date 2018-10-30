@@ -315,20 +315,18 @@ int quicksort(int* tabla, int ip, int iu){
 /* ob: numero de operaciones basicas realizadas    */
 /***************************************************/
 int quicksort_src(int* tabla, int ip, int iu){
-  int m;
-  int ob = 0;
+  int ob = 0, m, i;
 
   if (ip>iu || !tabla){
     return ERR;
-  }
 
-  else if (ip==iu){
-    return OK;
-  }
+  } else if (ip == iu){
+    return 0;
 
-  else{
-    while (ip < iu){
-      ob += partir_avg(tabla, ip, iu, &m);
+  } else {
+    for (i = ip+1; i <= iu;i++){
+      ob += partir(tabla, ip, iu, &m);
+      ob += quicksort_src(tabla, i, iu);
     }
     return ob;
   }

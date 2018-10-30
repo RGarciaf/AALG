@@ -92,8 +92,8 @@ printf("Pareja: 9\n");
     exit(-1);
   }
 
-	bucle(tamano, perm, (pfunc_busqueda) mergesort);
-  bucle(tamano, perm2, (pfunc_busqueda) quicksort);
+	bucle(tamano, perm, (pfunc_busqueda) quicksort);
+  bucle(tamano, perm2, (pfunc_busqueda) quicksort_src);
 
   free(perm);
   free(perm2);
