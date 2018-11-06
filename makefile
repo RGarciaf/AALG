@@ -1,4 +1,3 @@
-# Makefile de redes2
 CC = gcc
 CFLAGS = -Wall -ansi -pedantic -g -std=gnu99
 COMPILE = -c
@@ -88,8 +87,8 @@ ejercicio5_execute:
 		@echo Ejecutando $@
 		@echo "./ejercicio5 -num_min 100 -num_max 300 -incr 10 -numP 1000 -fichSalida ejercicio5.dat"
 		@./ejercicio5 -num_min 100 -num_max 300 -incr 10 -numP 1000 -fichSalida ejercicio5.dat
-		@head SelectSort_ejercicio5.dat
-		@head SelectSortInv_ejercicio5.dat
+		@head mergesort_ejercicio5.dat
+		@head quicksort_ejercicio5.dat
 		@./gnuplot.sh
 		@echo "\n"
 
