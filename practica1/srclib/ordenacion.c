@@ -24,7 +24,7 @@ int SelectSort(int* tabla, int ip, int iu)
 	int obs = 0;
 
 	for (; ip < iu; ip++ ){
-		for (min = ip, index = ip; index <= iu; index++ ){
+		for (min = ip, index = ip+1; index <= iu; index++ ){
 
 			obs++;
 			if ( tabla[index] < tabla[min] ){
@@ -49,7 +49,7 @@ int SelectSortInv(int* tabla, int ip, int iu)
 
 	for (; ip < iu; ip++ ){
 
-		for (min = ip, index = ip ; index <= iu; index++ ){
+		for (min = ip, index = ip+1 ; index <= iu; index++ ){
 
 			obs++;
 			if ( tabla[index] > tabla[min] ){

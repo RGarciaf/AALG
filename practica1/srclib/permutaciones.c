@@ -72,7 +72,7 @@ int* genera_perm(int n)
   }
 
   for(i=0; i<n; i++){
-    perm[i] = i+1; /*sumas 1 paras que la perm empiece en el 1*/
+    perm[i] = i; /*sumas 1 paras que la perm empiece en el 1*/
   }
 
   for(i=0; i<n; i++){
