@@ -78,7 +78,7 @@ printf("Pareja: 9\n");
   }
   printf("Salida correcta \n");*/
 
-  ret = genera_tiempos_ordenacion(quicksort_src, strcat(ssiNombre, nombre),num_min, num_max,incr, n_perms);
+  ret = genera_tiempos_ordenacion(mergesort, strcat(ssNombre, nombre),num_min, num_max,incr, n_perms);
   if (ret == ERR) { /* ERR_TIME debera ser un numero negativo */
     printf("Error en la funcion Time_Ordena\n");
     exit(-1);
