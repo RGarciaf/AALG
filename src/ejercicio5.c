@@ -27,8 +27,8 @@ int main(int argc, char** argv)
 {
   int i, num_min, num_max, incr, n_perms;
   char nombre[256];
-  char ssNombre[256] = "mergesort_";
-  char ssiNombre[256] = "quicksort_";
+  char ssNombre[256] = "quicksort_";
+  char ssiNombre[256] = "quicksort_src_";
   short ret;
 
   srand(time(NULL));
@@ -71,14 +71,14 @@ printf("Pareja: 9\n");
 
   /* calculamos los tiempos */
   // ret = genera_tiempos_ordenacion(SelectSort, nombre,num_min, num_max,incr, n_perms);
-  /*ret = genera_tiempos_ordenacion(mergesort, strcat(ssNombre, nombre),num_min, num_max,incr, n_perms);
+  ret = genera_tiempos_ordenacion(quicksort, strcat(ssNombre, nombre),num_min, num_max,incr, n_perms);
   if (ret == ERR) {
     printf("Error en la funcion Time_Ordena\n");
     exit(-1);
   }
-  printf("Salida correcta \n");*/
+  printf("Salida correcta \n");
 
-  ret = genera_tiempos_ordenacion(mergesort, strcat(ssNombre, nombre),num_min, num_max,incr, n_perms);
+  ret = genera_tiempos_ordenacion(quicksort_src, strcat(ssiNombre, nombre),num_min, num_max,incr, n_perms);
   if (ret == ERR) { /* ERR_TIME debera ser un numero negativo */
     printf("Error en la funcion Time_Ordena\n");
     exit(-1);
