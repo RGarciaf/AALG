@@ -328,8 +328,8 @@ int quicksort_src(int* tabla, int ip, int iu){
 
   else{
 
-    ob+= partir(tabla, ip, iu, &m);
-    for(aux = m-1, i=2; i  > 0; i++  ){
+    ob+ = partir(tabla, ip, iu, &m);
+    for(aux = m-1, i=2; i  > 0; i--  ){
         ob += quicksort_src(tabla, ip, aux);
         ip = aux +2;
         aux = iu;

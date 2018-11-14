@@ -51,7 +51,7 @@ void bucle(int tamano, int * perm, pfunc_busqueda sorter){
 
 int main(int argc, char** argv)
 {
-  int tamano, i;
+  int tamano, i, j;
   // int j, ret;
   int* perm = NULL, * perm2 = NULL;
 
@@ -92,7 +92,13 @@ printf("Pareja: 9\n");
     exit(-1);
   }
 
-	// bucle(tamano, perm, (pfunc_busqueda) mergesort);
+  for(j = 0; j < tamano; j++) {
+    perm[j] =  j;
+    perm2[j] = j;
+    printf("%d \t", perm[j]);
+  }
+
+	bucle(tamano, perm, (pfunc_busqueda) quicksort);
   bucle(tamano, perm2, (pfunc_busqueda) quicksort_src);
 
   free(perm);
