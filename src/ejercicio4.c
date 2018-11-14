@@ -92,11 +92,11 @@ printf("Pareja: 9\n");
     exit(-1);
   }
 
-  for(j = 0; j < tamano; j++) {
-    perm[j] =  j;
-    perm2[j] = j;
-    printf("%d \t", perm[j]);
-  }
+  // for(j = 0; j < tamano; j++) {
+  //   perm[j] =  j;
+  //   perm2[j] = j;
+  //   printf("%d \t", perm[j]);
+  // }
 
 	bucle(tamano, perm, (pfunc_busqueda) quicksort);
   bucle(tamano, perm2, (pfunc_busqueda) quicksort_src);
