@@ -51,7 +51,7 @@ void bucle(int tamano, int * perm, pfunc_busqueda sorter){
 
 int main(int argc, char** argv)
 {
-  int tamano, i, j;
+  int tamano, i;
   // int j, ret;
   int* perm = NULL, * perm2 = NULL;
 

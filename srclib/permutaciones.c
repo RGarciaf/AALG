@@ -72,7 +72,7 @@ int* genera_perm(int n)
   }
 
   for(i=0; i<n; i++){
-    perm[i] = i; /*sumas 1 paras que la perm empiece en el 1*/
+    perm[i] = i+1; 
   }
 
   for(i=0; i<n; i++){
@@ -106,25 +106,25 @@ int* genera_perm(int n)
 int** genera_permutaciones(int n_perms, int tamanio)
 {
   int i;
-    int** array;
+  int** array;
 
 
-    array = (int**) malloc(n_perms*sizeof(int*));
+  array = (int**) malloc(n_perms*sizeof(int*));
 
-    if(!array)
-      return NULL;
+  if(!array)
+    return NULL;
 
-    for(i=0; i<n_perms; i++){
-      array[i] = genera_perm(tamanio);
-      if(!array[i]){
-        while(i != 0){
-          free(array[i]);
-          i--;
-        }
-        free (array);
-        return NULL;
+  for(i=0; i<n_perms; i++){
+    array[i] = genera_perm(tamanio);
+    if(!array[i]){
+      while(i != 0){
+        free(array[i]);
+        i--;
       }
+      free (array);
+      return NULL;
     }
+  }
 
     return array;
 }

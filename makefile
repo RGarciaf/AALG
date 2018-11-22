@@ -7,17 +7,19 @@ HEADERS = -I includes
 SRC = src/
 SRCLIB = srclib/
 
-EXE = ejercicio1 ejercicio2 ejercicio3 ejercicio4 ejercicio5
+EXE = ejercicio1 ejercicio2 ejercicio3 ejercicio4 ejercicio5 ejercicio6 ejercicio7
 
-all: clean $(EXE)
+all: clean $(EXE) clear
 
 
 clean:
-		rm -f $(EXE) *.o *.h.gch lib/*
+	rm -f $(EXE) *.o *.h.gch lib/*
 
-libsource.a: ordenacion.o tiempos.o permutaciones.o
+clear:
+	rm -f *.o *.h.gch
+
+libsource.a: ordenacion.o tiempos.o permutaciones.o busqueda.o
 	ar rcs lib/libsource.a $^
-	rm -f *.o
 
 ejercicio1: $(SRC)ejercicio1.c libsource.a
 	$(CC) $(CFLAGS) $< $(HEADERS) $(LIB) -o $@
@@ -32,6 +34,12 @@ ejercicio4: $(SRC)ejercicio4.c libsource.a
 	$(CC) $(CFLAGS) $< $(HEADERS) $(LIB) -o $@
 
 ejercicio5: $(SRC)ejercicio5.c libsource.a
+	$(CC) $(CFLAGS) $< $(HEADERS) $(LIB) -o $@
+
+ejercicio6: $(SRC)ejercicio6.c libsource.a
+	$(CC) $(CFLAGS) $< $(HEADERS) $(LIB) -o $@
+
+ejercicio7: $(SRC)ejercicio7.c libsource.a
 	$(CC) $(CFLAGS) $< $(HEADERS) $(LIB) -o $@
 
 permutaciones.o : $(SRCLIB)permutaciones.c
@@ -49,6 +57,13 @@ ordenacion.o : $(SRCLIB)ordenacion.c
 	$(CC) $(CFLAGS) $(COMPILE) $^ $(HEADERS)
 
 tiempos.o : $(SRCLIB)tiempos.c
+	@echo "#---------------------------"
+	@echo "# Generando $@"
+	@echo "# Depende de $^"
+	@echo "# Ha cambiado $<"
+	$(CC) $(CFLAGS) $(COMPILE) $^ $(HEADERS)
+
+busqueda.o : $(SRCLIB)busqueda.c
 	@echo "#---------------------------"
 	@echo "# Generando $@"
 	@echo "# Depende de $^"
@@ -87,10 +102,10 @@ ejercicio5_execute:
 		@echo Ejecutando $@
 		@echo "./ejercicio5 -num_min 100 -num_max 300 -incr 10 -numP 1000 -fichSalida ejercicio5.dat"
 		@./ejercicio5 -num_min 100 -num_max 300 -incr 10 -numP 1000 -fichSalida ejercicio5.dat
-		@head mergesort_ejercicio5.dat
-		@head quicksort_ejercicio5.dat
-		@./gnuplot.sh
-		@echo "\n"
+		# @head mergesort_ejercicio5.dat
+		# @head quicksort_ejercicio5.dat
+		# @./gnuplot.sh
+		# @echo "\n"
 
 
 
@@ -122,3 +137,11 @@ ejercicio5_test:
 		@head SelectSort_ejercicio5.log
 		@head SelectSortInv_ejercicio5.log
 		@echo "\n"
+
+ejercicio6_test:
+	@echo Ejecutando ejercicio6
+	@./ejercicio6 -tamanio 10 -clave 5
+
+ejercicio7_test:
+	@echo Ejecutando ejercicio7
+	@./ejercicio7 -num_min 10 -num_max 100 -incr 10 -n_veces 1 -fichSalida busqueda.dat

@@ -21,24 +21,46 @@
 
 #include "ordenacion.h"
 #include "permutaciones.h"
+#include "busqueda.h"
 #include <time.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 /* definiciones de tipos */
-typedef struct tiempo {
-  int N;           /* tamanio los elementos */
-  int n_elems;     /* numero de elementos a promediar */
+// typedef struct tiempo {
+//   int n_veces;     /* numero de veces que se evalua cada permutacion */
+//   int n_perms;
+//   int N;           /* tamanio los elementos */
+//   int n_elems;     /* numero de elementos a promediar */
+//   double tiempo;   /* tiempo promedio */
+//   double medio_ob; /* numero premedio de veces que se ejecuta la OB */
+//   int min_ob;      /* minimo de ejecuciones de la OB */
+//   int max_ob;      /* maximo de ejecuciones de la OB */
+// } TIEMPO, *PTIEMPO;
+typedef struct tiempo
+{
+  int n_perms;     /* numero de permutaciones */
+  int tamanio;     /* tamanio de las permutaciones */
+  int n_veces;     /* numero de veces que se evalua cada permutacion */
   double tiempo;   /* tiempo promedio */
   double medio_ob; /* numero premedio de veces que se ejecuta la OB */
   int min_ob;      /* minimo de ejecuciones de la OB */
   int max_ob;      /* maximo de ejecuciones de la OB */
 } TIEMPO, *PTIEMPO;
 
-
 /* Funciones */
 short tiempo_medio_ordenacion(pfunc_ordena metodo, int n_perms,int N, PTIEMPO ptiempo);
 short genera_tiempos_ordenacion(pfunc_ordena metodo, char* fichero, int num_min, int num_max, int incr, int n_perms);
 short guarda_tabla_tiempos(char* fichero, PTIEMPO tiempo, int n_tiempos);
+short genera_tiempos_busqueda(pfunc_busqueda metodo, pfunc_generador_claves generador,
+                              char orden, char *fichero,
+                              int num_min, int num_max,
+                              int incr, int n_veces);
 
+short tiempo_medio_busqueda(pfunc_busqueda metodo, pfunc_generador_claves generador,
+                            char orden,
+                            int N,
+                            int n_veces,
+                            PTIEMPO ptiempo);
 #endif
