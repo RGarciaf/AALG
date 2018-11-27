@@ -7,7 +7,7 @@ HEADERS = -I includes
 SRC = src/
 SRCLIB = srclib/
 
-EXE = ejercicio1 ejercicio2 ejercicio3 ejercicio4 ejercicio5 ejercicio6 ejercicio7
+EXE = ejercicio1 ejercicio2 ejercicio3 ejercicio4 ejercicio5 ejercicio6 ejercicio7 ejercicio7_roman
 
 all: clean $(EXE) clear
 
@@ -40,6 +40,9 @@ ejercicio6: $(SRC)ejercicio6.c libsource.a
 	$(CC) $(CFLAGS) $< $(HEADERS) $(LIB) -o $@
 
 ejercicio7: $(SRC)ejercicio7.c libsource.a
+	$(CC) $(CFLAGS) $< $(HEADERS) $(LIB) -o $@
+	
+ejercicio7_roman: $(SRC)ejercicio7_roman.c libsource.a
 	$(CC) $(CFLAGS) $< $(HEADERS) $(LIB) -o $@
 
 permutaciones.o : $(SRCLIB)permutaciones.c
