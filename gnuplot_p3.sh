@@ -1,3 +1,4 @@
+rm "Bbin Tamano-Obs.png" "Blin Tamano-Obs.png" "Blin NO_ORDENADO Tamano-Obs.png" "Bbin Blin Tamano-Obs.png" "Bbin Blin Tamano-Tiempo.png"
 gnuplot << END_GNUPLOT
 set ylabel "Nº Operaciones Basicas"
 set xlabel "Tamaño"
@@ -23,30 +24,17 @@ plot "blin_NO_ORDENADO_1000_10000_10_10.dat" using 1:3 with lines title 'Blin NO
     "blin_NO_ORDENADO_1000_10000_10_10.dat" using 1:5 with lines title 'Blin NO_OR Tamano - Min'
 replot
 
+set output "Bbin Blin Tamano-Obs.png"
+plot "bbin_1000_10000_10_10.dat" using 1:3 with lines title 'Bbin Tamano - Media', \
+    "blin_1000_10000_10_10.dat" using 1:3 with lines title 'Blin Tamano - Media'
+replot
 
 set ylabel "Tiempo (ns)"
 set xlabel "Tamaño"
 
-set output "ms Tamano-Tiempo.png"
-plot "mergesort_ejercicio5.dat" using 1:2 with lines title 'mergesort Tamano - Tiempo'
-replot
-
-set output "qs Tamano-Tiempo.png"
-plot "quicksort_ejercicio5.dat" using 1:2 with lines title 'quicksort Tamano - Tiempo'
-replot
-
-set output "qs ms Tamano-Tiempo.png"
-plot "quicksort_ejercicio5.dat" using 1:2 with lines title 'quicksort Tamano - Tiempo' , \
-    "mergesort_ejercicio5.dat" using 1:2 with lines title 'mergesort Tamano - Tiempo'
-replot
-
-set output "qs_src Tamano-Tiempo.png"
-plot "quicksort_src_ejercicio5.dat" using 1:2 with lines title 'quicksort_src Tamano - Tiempo'
-replot
-
-set output "qs qs_src Tamano-Tiempo.png"
-plot "quicksort_ejercicio5.dat" using 1:2 with lines title 'quicksort Tamano - Tiempo' , \
-    "quicksort_src_ejercicio5.dat" using 1:2 with lines title 'quicksort_src Tamano - Tiempo'
+set output "Bbin Blin Tamano-Tiempo.png"
+plot "bbin_1000_10000_10_10.dat" using 1:2 with lines title 'Bbin Tamano - Tiempo', \
+     "blin_1000_10000_10_10.dat" using 1:2 with lines title 'Blin Tamano - Tiempo' 
 replot
 
 quit
